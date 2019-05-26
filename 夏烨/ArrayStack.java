@@ -1,20 +1,20 @@
 package com.test.any;
 /**
- * ÓÃÊı×éÄ£ÄâÕ»µÄÊµÏÖ
- * @author ÏÄìÇ
+ * ç”¨æ•°ç»„æ¨¡æ‹Ÿæ ˆçš„å®ç°
+ * @author å¤çƒ¨
  *
  */
 
 public class ArrayStack {
 	static int[] arr = new int[10];
-	int index = 0;//Õ»¶¥ÔªËØµÄºóÒ»Î»
+	int index = 0;//æ ˆé¡¶å…ƒç´ çš„åä¸€ä½
 
-	// Ñ¹ÈëÔªËØ
+	// å‹å…¥å…ƒç´ 
 	public void push(int element) {
 		arr[index] = element;
 		index++;
 
-		if (index >= arr.length) {// Èç¹û²åÈëµÄ·¶Î§³¬³öÁËÊı×éµÄ³¤¶È
+		if (index >= arr.length) {// å¦‚æœæ’å…¥çš„èŒƒå›´è¶…å‡ºäº†æ•°ç»„çš„é•¿åº¦
 			int[] newArr = new int[arr.length * 2];
 			for (int i = 0; i < arr.length; i++) {
 				newArr[i] = arr[i];
@@ -24,7 +24,7 @@ public class ArrayStack {
 
 	}
 
-	// µ¯³öÔªËØ
+	// å¼¹å‡ºå…ƒç´ 
 	public int pop() {
 		
 		int element = arr[index - 1];
@@ -41,14 +41,14 @@ public class ArrayStack {
 	}
 
 	/**
-	 * ·µ»ØÊı×éµÄ´óĞ¡
+	 * è¿”å›æ•°ç»„çš„å¤§å°
 	 */
 	public int size() {
-		return index - 1;
+		return index ;
 	}
 
 	/**
-	 * Çå¿ÕÊı×é
+	 * æ¸…ç©ºæ•°ç»„
 	 */
 	public void clear() {
 		int[] arr2 = new int[arr.length];
@@ -69,9 +69,9 @@ public class ArrayStack {
 		as.push(6);
 		as.push(7);
 
-		System.out.println("Õ»µ×µÄÊı¾İÎª£º");
+		System.out.println("æ ˆåº•çš„æ•°æ®ä¸ºï¼š");
 		System.out.println(as.pop());
-		System.out.println("´ËÊ±Õ»ÖĞµÄÔªËØÊÇ£º");
+		System.out.println("æ­¤æ—¶æ ˆä¸­çš„å…ƒç´ æ˜¯ï¼š");
 		for (int a : arr) {
 			System.out.println(a);
 		}
