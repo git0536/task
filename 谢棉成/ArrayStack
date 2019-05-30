@@ -1,0 +1,55 @@
+
+
+public class ArrayStack {
+   private String[] items;//用来存放数据的数组，作为栈
+   private int count;//用来统计栈中已存元素个数，记录元素目前所处的位置
+   private int n;//栈的大小
+     //初始化栈
+    public ArrayStack( int n) {
+        this.items = new String[n];
+        this.count = 0;
+        this.n = n;
+    }
+
+    //弹出元素
+    public  String  pop(){
+        if(count==0){
+            return null;
+        }else {
+            String temp=items[count-1];
+            count--;
+            return temp;
+        }
+
+    }
+
+    //压入元素
+   public boolean push(String  element){
+           if(count==n){
+               return false;
+           }else {
+               items[count]=element;
+               count++;
+               return true;
+           }
+    }
+
+    //返回长度
+    int  size(){
+      return count;
+    }
+
+    //清除所有元素
+    public void clear(){
+        count=0;
+    }
+
+    public static void main(String[] args)throws Exception {
+        ArrayStack arrayStack=new ArrayStack(5);
+        arrayStack.push("lsl");
+        arrayStack.push("123");
+        System.out.println(arrayStack.pop());
+        System.out.println(arrayStack.pop());
+        System.out.println(arrayStack.size());
+    }
+}
